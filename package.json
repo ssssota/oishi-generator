@@ -1,0 +1,24 @@
+{
+	"name": "oishi-generator",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc -b && vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@preact/signals": "^2.0.1",
+		"preact": "^10.25.4"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@preact/preset-vite": "^2.10.1",
+		"@tailwindcss/vite": "^4.0.6",
+		"tailwindcss": "^4.0.6",
+		"typescript": "~5.7.2",
+		"vite": "^6.1.0"
+	},
+	"packageManager": "pnpm@10.4.0+sha512.6b849d0787d97f8f4e1f03a9b8ff8f038e79e153d6f11ae539ae7c435ff9e796df6a862c991502695c7f9e8fac8aeafc1ac5a8dab47e36148d183832d886dd52"
+}
