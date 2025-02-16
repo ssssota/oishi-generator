@@ -7,10 +7,10 @@ const CHARACTER_HEIGHT = 210;
 const CANVAS_MARGIN_X = 50;
 const CANVAS_MARGIN_Y = 20;
 const characters: Record<string, { x: number; y: number }> = {
-	オ: { x: 150, y: 250 },
-	ー: { x: 262, y: 250 },
-	イ: { x: 380, y: 250 },
-	シ: { x: 490, y: 250 },
+	オ: { x: 150, y: 255 },
+	ー: { x: 262, y: 255 },
+	イ: { x: 380, y: 255 },
+	シ: { x: 490, y: 255 },
 	マ: { x: 150, y: 457 },
 	サ: { x: 262, y: 457 },
 	ヨ: { x: 375, y: 457 },
@@ -43,6 +43,8 @@ export function App() {
 				Math.max(...lines.map(calcLineWidth)) + CANVAS_MARGIN_X * 2;
 			canvas.height = lines.length * CHARACTER_HEIGHT + CANVAS_MARGIN_Y * 2;
 			ctx.fillStyle = "white";
+			ctx.strokeStyle = "white";
+			ctx.lineWidth = 3;
 			ctx.fillRect(0, 0, canvas.width, canvas.height);
 			for (let i = 0; i < lines.length; i++) {
 				const line = lines[i];
@@ -65,6 +67,12 @@ export function App() {
 						character.y,
 						CHARACTER_WIDTH,
 						CHARACTER_HEIGHT,
+						x,
+						i * CHARACTER_HEIGHT + CANVAS_MARGIN_Y,
+						CHARACTER_WIDTH,
+						CHARACTER_HEIGHT,
+					);
+					ctx.strokeRect(
 						x,
 						i * CHARACTER_HEIGHT + CANVAS_MARGIN_Y,
 						CHARACTER_WIDTH,
